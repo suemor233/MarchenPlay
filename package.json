@@ -22,7 +22,7 @@
     "dev": "electron-vite dev",
     "dev:web": "vite",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "lint": "eslint",
     "lint:fix": "eslint --fix",
     "postinstall": "electron-builder install-app-deps",
     "prepare": "simple-git-hooks",
