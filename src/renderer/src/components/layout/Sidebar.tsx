@@ -5,19 +5,20 @@ export const Sidebar = () => {
   const normalStyle =
     !window.electron || window.electron.process.platform !== 'darwin'
   return (
-    <div className="h-full w-[250px] bg-base-200">
+    <div className="relative h-full w-[250px] bg-base-200 pt-2.5">
       <div className={cn(
-        'ml-5 mr-3 flex items-center',
-
+        'drag-region ml-5 mr-3 flex items-center',
         normalStyle ? 'ml-4 justify-between' : 'justify-end',
       )}
       >
-        <button className="btn btn-primary">One</button>
+        <button type="button" className="no-drag-region flex size-8 items-center justify-center rounded-md transition-colors hover:bg-base-300">
+          <i className="icon-[mingcute--user-add-2-line]" />
+        </button>
       </div>
-      <button className="btn btn-secondary">Two</button>
-      <button className="btn btn-outline btn-accent">Three</button>
-      <NavLink to="/">back</NavLink>
-      <NavLink to="/contacts/1">home</NavLink>
+      <div className="flex flex-col">
+        <NavLink to="/">back</NavLink>
+        <NavLink to="/contacts/1">home</NavLink>
+      </div>
     </div>
   )
 }

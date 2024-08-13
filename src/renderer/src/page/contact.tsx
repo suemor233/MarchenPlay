@@ -16,7 +16,7 @@ export default function Contact() {
         <img
           key={contact.avatar}
           src={contact.avatar ||
-            `https://robohash.org/${contact.id}.png?size=200x200`}
+            `https://robohash.org/1.png?size=200x200`}
         />
       </div>
 

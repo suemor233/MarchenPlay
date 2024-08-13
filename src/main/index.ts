@@ -20,6 +20,10 @@ function createWindow(): void {
     },
     backgroundMaterial: 'mica',
     titleBarStyle: platform === 'win32' ? 'hidden' : 'hiddenInset',
+    trafficLightPosition: {
+      x: 18,
+      y: 18,
+    },
   })
 
   mainWindow.on('ready-to-show', () => {

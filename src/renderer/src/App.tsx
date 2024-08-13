@@ -1,5 +1,5 @@
-import type { FC, PropsWithChildren } from 'react'
 import { useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
 
 import { RootLayout } from './components/layout/RootLayout'
 import { Sidebar } from './components/layout/Sidebar'
@@ -29,9 +29,9 @@ const Prepare = () => {
   return null
 }
 
-const Content: FC<PropsWithChildren> = ({ children }) => (
+const Content = () => (
   <main className="flex-1">
-    {children}
+    <Outlet />
   </main>
 )
 export default App
