@@ -1,10 +1,16 @@
 {
   "name": "marchen-play",
   "type": "module",
-  "version": "1.0.0",
-  "description": "An Electron application with React and TypeScript",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@9.6.0",
+  "description": "Bullet screen video player",
+  "author": "Suemor",
+  "homepage": "https://github.com/suemor233/MarchenPlay",
+  "repository": {
+    "url": "https://github.com/suemor233/MarchenPlay",
+    "type": "git"
+  },
   "main": "./out/main/index.js",
   "scripts": {
     "build": "npm run typecheck && electron-vite build",
