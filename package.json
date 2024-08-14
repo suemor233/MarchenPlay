@@ -37,6 +37,7 @@
     "click-to-react-component": "^1.1.0",
     "clsx": "^2.1.1",
     "electron-updater": "^6.1.7",
+    "lodash-es": "^4.17.21",
     "react-router-dom": "6.25.1",
     "tailwind-merge": "^2.5.2"
   },
@@ -44,6 +45,7 @@
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@iconify-json/mingcute": "^1.1.19",
     "@iconify/tailwind": "^1.1.2",
+    "@types/lodash-es": "4.17.12",
     "@types/node": "^20.14.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
