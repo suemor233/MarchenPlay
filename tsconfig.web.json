@@ -7,7 +7,8 @@
     "src/preload/*.d.ts",
     "src/shared/src/**/*",
     "types/**/*.d.ts",
-    "src/env.ts"
+    "src/env.ts",
+    "src/main/tipc"
   ],
   "compilerOptions": {
     "composite": true,
@@ -20,6 +21,9 @@
     "paths": {
       "@renderer/*": [
         "src/renderer/src/*"
+      ],
+      "@main/*": [
+        "src/main/*"
       ]
     }
   }

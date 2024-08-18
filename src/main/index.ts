@@ -4,8 +4,11 @@ import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { app, BrowserWindow, shell } from 'electron'
 
 import icon from '../../resources/icon.png?asset'
+import { register } from './register'
 
 const { platform } = process
+
+register()
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({

@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@egoist/tipc':
+        specifier: ^0.3.2
+        version: 0.3.2(electron@31.3.1)(react@18.3.1)
       '@electron-toolkit/preload':
         specifier: ^3.0.1
         version: 3.0.1(electron@31.3.1)
       '@electron-toolkit/utils':
         specifier: ^3.0.0
         version: 3.0.0(electron@31.3.1)
+      '@tanstack/react-query':
+        specifier: ^5.51.23
+        version: 5.51.23(react@18.3.1)
       click-to-react-component:
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -253,6 +259,11 @@ packages:
   '@develar/schema-utils@2.6.5':
     resolution: {integrity: sha512-0cp4PsWQ/9avqTVMCtZ+GirikIA36ikvjtHweU4/j8yLtgObI0+JUPhYFScgwlteveGB1rt3Cm8UhN04XayDig==}
     engines: {node: '>= 8.9.0'}
+
+  '@egoist/tipc@0.3.2':
+    resolution: {integrity: sha512-p8g35BhErVkYIgDqkw/HQJSli1TOsZRIUU9U7PYnYfwru6J/Ep1lwFGH2N6+sQMFi1HkqGTTUlJEISJ1DClfQw==}
+    peerDependencies:
+      electron: '>=26.0.0'
 
   '@electron-toolkit/preload@3.0.1':
     resolution: {integrity: sha512-EzoQmpK8jqqU8YnM5jRe0GJjGVJPke2KtANqz8QtN2JPT96ViOvProBdK5C6riCm0j1T8jjAGVQCZLQy9OVoIA==}
@@ -889,6 +900,14 @@ packages:
   '@szmarczak/http-timer@4.0.6':
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
     engines: {node: '>=10'}
+
+  '@tanstack/query-core@5.51.21':
+    resolution: {integrity: sha512-POQxm42IUp6n89kKWF4IZi18v3fxQWFRolvBA6phNVmA8psdfB1MvDnGacCJdS+EOX12w/CyHM62z//rHmYmvw==}
+
+  '@tanstack/react-query@5.51.23':
+    resolution: {integrity: sha512-CfJCfX45nnVIZjQBRYYtvVMIsGgWLKLYC4xcUiYEey671n1alvTZoCBaU9B85O8mF/tx9LPyrI04A6Bs2THv4A==}
+    peerDependencies:
+      react: ^18.0.0
 
   '@tootallnate/once@2.0.0':
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -3592,6 +3611,14 @@ snapshots:
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
 
+  '@egoist/tipc@0.3.2(electron@31.3.1)(react@18.3.1)':
+    dependencies:
+      electron: 31.3.1
+    optionalDependencies:
+      '@tanstack/react-query': 5.51.23(react@18.3.1)
+    transitivePeerDependencies:
+      - react
+
   '@electron-toolkit/preload@3.0.1(electron@31.3.1)':
     dependencies:
       electron: 31.3.1
@@ -4202,6 +4229,13 @@ snapshots:
   '@szmarczak/http-timer@4.0.6':
     dependencies:
       defer-to-connect: 2.0.1
+
+  '@tanstack/query-core@5.51.21': {}
+
+  '@tanstack/react-query@5.51.23(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-core': 5.51.21
+      react: 18.3.1
 
   '@tootallnate/once@2.0.0': {}
 
