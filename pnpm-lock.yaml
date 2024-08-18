@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@egoist/tipc':
         specifier: ^0.3.2
-        version: 0.3.2(electron@31.3.1)(react@18.3.1)
+        version: 0.3.2(electron@31.4.0)(react@18.3.1)
       '@electron-toolkit/preload':
         specifier: ^3.0.1
-        version: 3.0.1(electron@31.3.1)
+        version: 3.0.1(electron@31.4.0)
       '@electron-toolkit/utils':
         specifier: ^3.0.0
-        version: 3.0.0(electron@31.3.1)
+        version: 3.0.0(electron@31.4.0)
       '@tanstack/react-query':
         specifier: ^5.51.23
         version: 5.51.23(react@18.3.1)
@@ -71,7 +71,7 @@ importers:
         version: 4.12.10(postcss@8.4.41)
       electron:
         specifier: ^31.0.2
-        version: 31.3.1
+        version: 31.4.0
       electron-builder:
         specifier: ^24.13.3
         version: 24.13.3(electron-builder-squirrel-windows@24.13.3(dmg-builder@24.13.3))
@@ -1609,8 +1609,8 @@ packages:
       '@swc/core':
         optional: true
 
-  electron@31.3.1:
-    resolution: {integrity: sha512-9fiuWlRhBfygtcT+auRd/WdBK/f8LZZcrpx0RjpXhH2DPTP/PfnkC4JB1PW55qCbGbh4wAgkYbf4ExIag8oGCA==}
+  electron@31.4.0:
+    resolution: {integrity: sha512-YTwKoAA+nrJMlI1TTHnIXLYWoQLKnhbkz0qxZcI7Hadcy0UaFMFs9xzwvH2MnrRpVJy7RKo49kVGuvSdRl8zMA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -3611,25 +3611,25 @@ snapshots:
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
 
-  '@egoist/tipc@0.3.2(electron@31.3.1)(react@18.3.1)':
+  '@egoist/tipc@0.3.2(electron@31.4.0)(react@18.3.1)':
     dependencies:
-      electron: 31.3.1
+      electron: 31.4.0
     optionalDependencies:
       '@tanstack/react-query': 5.51.23(react@18.3.1)
     transitivePeerDependencies:
       - react
 
-  '@electron-toolkit/preload@3.0.1(electron@31.3.1)':
+  '@electron-toolkit/preload@3.0.1(electron@31.4.0)':
     dependencies:
-      electron: 31.3.1
+      electron: 31.4.0
 
   '@electron-toolkit/tsconfig@1.0.1(@types/node@20.14.15)':
     dependencies:
       '@types/node': 20.14.15
 
-  '@electron-toolkit/utils@3.0.0(electron@31.3.1)':
+  '@electron-toolkit/utils@3.0.0(electron@31.4.0)':
     dependencies:
-      electron: 31.3.1
+      electron: 31.4.0
 
   '@electron/asar@3.2.10':
     dependencies:
@@ -5108,7 +5108,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@31.3.1:
+  electron@31.4.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 20.14.15
