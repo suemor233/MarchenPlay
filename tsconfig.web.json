@@ -7,8 +7,7 @@
     "src/preload/*.d.ts",
     "src/shared/src/**/*",
     "types/**/*.d.ts",
-    "src/env.ts",
-    "src/main/tipc"
+    "src/env.ts"
   ],
   "compilerOptions": {
     "composite": true,
