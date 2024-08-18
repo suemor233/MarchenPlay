@@ -12,7 +12,16 @@ export const Titlebar = () => {
 
   return (
     <div>
-      <button onClick={() => refetch()}>max</button>
+      <button type="button" onClick={() => refetch()}>ismax?</button>
+      <p>{`${data}`}</p>
+      <button
+        type="button"
+        onClick={() => {
+          tipcClient?.windowAction({ action: 'maximum' })
+        }}
+      >
+        to max
+      </button>
     </div>
   )
 }
