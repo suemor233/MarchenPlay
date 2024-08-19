@@ -40,7 +40,7 @@
     "clsx": "^2.1.1",
     "electron-updater": "^6.1.7",
     "lodash-es": "^4.17.21",
-    "react-router-dom": "6.25.1",
+    "react-router-dom": "6.26.1",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
