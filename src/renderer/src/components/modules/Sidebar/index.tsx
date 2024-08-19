@@ -1,11 +1,14 @@
 import { cn } from '@renderer/libs/utils'
+import type { SidebarRouteObject } from '@renderer/router'
+import { siderbarRoutes } from '@renderer/router'
+import type { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
 export const Sidebar = () => {
   const normalStyle =
     !window.electron || window.electron.process.platform !== 'darwin'
   return (
-    <div className="relative h-full w-[250px] bg-base-200 pt-2.5">
+    <nav className="relative h-full w-[250px] bg-base-200 pt-2.5">
       <div className={cn(
         'drag-region ml-5 mr-3 flex items-center',
         normalStyle ? 'ml-4 justify-between' : 'justify-end',
@@ -16,9 +19,26 @@ export const Sidebar = () => {
         </button>
       </div>
       <div className="flex flex-col">
-        <NavLink to="/">back</NavLink>
-        <NavLink to="/contacts/1">home</NavLink>
+        {siderbarRoutes.map((route) => (
+          <NavLinkItem {...route} key={route.path} />
+        ))}
+
       </div>
-    </div>
+    </nav>
+  )
+}
+
+const NavLinkItem: FC<SidebarRouteObject> = ({ path, meta }) => {
+  if (!meta || !path) {
+    return null
+  }
+  const { title, icon } = meta
+  return (
+    <NavLink to={path}>
+      <p>
+        <span>{title}</span>
+        <i className={icon} />
+      </p>
+    </NavLink>
   )
 }

@@ -30,7 +30,7 @@ const vite = () => defineConfig({
   },
   base: '/',
   server: {
-    port: 2233,
+    port: 1106,
   },
   plugins: [
     react(),

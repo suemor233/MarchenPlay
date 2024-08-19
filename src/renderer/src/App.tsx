@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 
 import { RootLayout } from './components/layout/RootLayout'
-import { Sidebar } from './components/layout/Sidebar'
+import { Sidebar } from './components/modules/Sidebar'
 import { Titlebar } from './components/modules/windows/Titlebar'
 import { appLog } from './libs/log'
 import { cn, getOS } from './libs/utils'
