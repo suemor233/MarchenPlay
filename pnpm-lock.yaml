@@ -110,7 +110,7 @@ importers:
         version: 5.4.1(@types/node@20.16.1)
       vite-plugin-mkcert:
         specifier: ^1.17.5
-        version: 1.17.5(vite@5.4.1(@types/node@20.16.1))
+        version: 1.17.6(vite@5.4.1(@types/node@20.16.1))
 
 packages:
 
@@ -1221,8 +1221,8 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
-  axios@1.7.3:
-    resolution: {integrity: sha512-Ar7ND9pU99eJ9GpoGQKhKf58GpUOgnzuaB7ueNQ5BMi0p+LZ5oaEnfF999fAArcTIBwXTCHAmGcHOZJaWPq9Nw==}
+  axios@1.7.4:
+    resolution: {integrity: sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -3300,8 +3300,8 @@ packages:
     resolution: {integrity: sha512-veufcmxri4e3XSrT0xwfUR7kguIkaxBeosDg00yDWhk49wdwkSUrvvsm7nc75e1PUyvIeZj6nS8VQRYz2/S4Xg==}
     engines: {node: '>=0.6.0'}
 
-  vite-plugin-mkcert@1.17.5:
-    resolution: {integrity: sha512-KKGY3iHx/9zb7ow8JJ+nLN2HiNIBuPBwj34fJ+jAJT89/8qfk7msO7G7qipR8VDEm9xMCys0xT11QOJbZcg3/Q==}
+  vite-plugin-mkcert@1.17.6:
+    resolution: {integrity: sha512-4JR1RN0HEg/w17eRQJ/Ve2pSa6KCVQcQO6yKtIaKQCFDyd63zGfXHWpygBkvvRSpqa0GcqNKf0fjUJ0HiJQXVQ==}
     engines: {node: '>=v16.7.0'}
     peerDependencies:
       vite: '>=3'
@@ -4660,7 +4660,7 @@ snapshots:
       postcss: 8.4.41
       postcss-value-parser: 4.2.0
 
-  axios@1.7.3(debug@4.3.6):
+  axios@1.7.4(debug@4.3.6):
     dependencies:
       follow-redirects: 1.15.6(debug@4.3.6)
       form-data: 4.0.0
@@ -6992,10 +6992,10 @@ snapshots:
       extsprintf: 1.4.1
     optional: true
 
-  vite-plugin-mkcert@1.17.5(vite@5.4.1(@types/node@20.16.1)):
+  vite-plugin-mkcert@1.17.6(vite@5.4.1(@types/node@20.16.1)):
     dependencies:
       '@octokit/rest': 20.1.1
-      axios: 1.7.3(debug@4.3.6)
+      axios: 1.7.4(debug@4.3.6)
       debug: 4.3.6
       picocolors: 1.0.1
       vite: 5.4.1(@types/node@20.16.1)
