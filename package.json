@@ -41,7 +41,8 @@
     "electron-updater": "^6.1.7",
     "lodash-es": "^4.17.21",
     "react-router-dom": "6.26.1",
-    "tailwind-merge": "^2.5.2"
+    "tailwind-merge": "^2.5.2",
+    "xgplayer": "^3.0.19"
   },
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",
