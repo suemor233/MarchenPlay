@@ -8,6 +8,7 @@ import { register } from './register'
 
 const { platform } = process
 
+const isDev = process.env.NODE_ENV === 'development'
 register()
 function createWindow(): void {
   // Create the browser window.
@@ -30,7 +31,7 @@ function createWindow(): void {
   })
 
   mainWindow.on('ready-to-show', () => {
-    mainWindow.show()
+    isDev ? mainWindow.showInactive() : mainWindow.show()
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {

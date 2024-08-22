@@ -2,15 +2,15 @@ import { cn } from '@renderer/libs/utils'
 import type { SidebarRouteObject } from '@renderer/router'
 import { siderbarRoutes } from '@renderer/router'
 import type { FC } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 export const Sidebar = () => {
   const normalStyle =
     !window.electron || window.electron.process.platform !== 'darwin'
   return (
-    <nav className="relative h-full w-[250px] bg-base-200 pt-2.5">
+    <nav className="relative h-full w-[250px] bg-base-200 px-3 pt-2.5">
       <div className={cn(
-        'drag-region ml-5 mr-3 flex items-center',
+        'drag-region ml-5 flex items-center',
         normalStyle ? 'ml-4 justify-between' : 'justify-end',
       )}
       >
@@ -18,26 +18,26 @@ export const Sidebar = () => {
           <i className="icon-[mingcute--user-add-2-line]" />
         </button>
       </div>
-      <div className="flex flex-col">
+      <div className="mt-5 flex flex-col gap-5">
         {siderbarRoutes.map((route) => (
           <NavLinkItem {...route} key={route.path} />
         ))}
-
       </div>
     </nav>
   )
 }
 
 const NavLinkItem: FC<SidebarRouteObject> = ({ path, meta }) => {
+  const { pathname } = useLocation()
   if (!meta || !path) {
     return null
   }
   const { title, icon } = meta
   return (
-    <NavLink to={path}>
-      <p>
-        <span>{title}</span>
+    <NavLink to={path} className={cn(pathname === path)}>
+      <p className="flex items-center gap-1">
         <i className={icon} />
+        <span>{title}</span>
       </p>
     </NavLink>
   )

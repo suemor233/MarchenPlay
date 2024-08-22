@@ -18,7 +18,7 @@ export const siderbarRoutes = [
   {
     path: RouteName.PLAYER,
     meta: {
-      icon: 'icon-[video-line]',
+      icon: 'icon-[mingcute--video-camera-line]',
       title: '视频播放',
     },
     element: <VideoPlayer />,
@@ -26,15 +26,15 @@ export const siderbarRoutes = [
   {
     path: RouteName.LATEST_ANIME,
     meta: {
-      icon: 'icon-[video-line]',
+      icon: 'icon-[mingcute--lightning-line]',
       title: '最新番剧',
     },
     element: <VideoPlayer />,
   },
   {
-    path: RouteName.PLAYER,
+    path: RouteName.HISTORY,
     meta: {
-      icon: 'icon-[video-line]',
+      icon: 'icon-[mingcute--history-line]',
       title: '播放记录',
     },
     element: <VideoPlayer />,
