@@ -18,7 +18,7 @@ export const Sidebar = () => {
           <i className="icon-[mingcute--user-add-2-line]" />
         </button>
       </div>
-      <div className="mt-5 flex flex-col gap-5">
+      <div className="mt-5 flex flex-col gap-3">
         {siderbarRoutes.map((route) => (
           <NavLinkItem {...route} key={route.path} />
         ))}
@@ -34,8 +34,8 @@ const NavLinkItem: FC<SidebarRouteObject> = ({ path, meta }) => {
   }
   const { title, icon } = meta
   return (
-    <NavLink to={path} className={cn(pathname === path)}>
-      <p className="flex items-center gap-1">
+    <NavLink to={path} className={cn(pathname === path && 'rounded-md bg-base-300')}>
+      <p className="flex items-center gap-1 p-2">
         <i className={icon} />
         <span>{title}</span>
       </p>

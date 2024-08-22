@@ -1,7 +1,9 @@
 import App from '@renderer/App'
 import NotFound from '@renderer/components/common/NotFound'
 import { RootLoader } from '@renderer/libs/loading'
-import VideoPlayer from '@renderer/page/video'
+import History from '@renderer/page/history'
+import LastAnime from '@renderer/page/latest-anime'
+import VideoPlayer from '@renderer/page/player'
 import type { NonIndexRouteObject, RouteObject } from 'react-router-dom'
 import { createHashRouter, Navigate } from 'react-router-dom'
 
@@ -29,7 +31,7 @@ export const siderbarRoutes = [
       icon: 'icon-[mingcute--lightning-line]',
       title: '最新番剧',
     },
-    element: <VideoPlayer />,
+    element: <LastAnime />,
   },
   {
     path: RouteName.HISTORY,
@@ -37,7 +39,7 @@ export const siderbarRoutes = [
       icon: 'icon-[mingcute--history-line]',
       title: '播放记录',
     },
-    element: <VideoPlayer />,
+    element: <History />,
   },
 ] satisfies SidebarRouteObject[]
 
