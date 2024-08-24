@@ -26,6 +26,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      danmu.js:
+        specifier: ^1.1.13
+        version: 1.1.13
       electron-updater:
         specifier: ^6.1.7
         version: 6.2.1
@@ -40,7 +43,7 @@ importers:
         version: 2.5.2
       xgplayer:
         specifier: ^3.0.19
-        version: 3.0.19(core-js@3.38.1)
+        version: 3.0.20(core-js@3.38.1)
     devDependencies:
       '@electron-toolkit/tsconfig':
         specifier: ^1.0.1
@@ -3414,13 +3417,13 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  xgplayer-subtitles@3.0.19:
-    resolution: {integrity: sha512-e2k1oFq1HSbnnHaK694FREqkFyq65ze4vETTIy8ABkOXItcr9/ugyNIJ4zCjD+jExSAVppM9FAF761X4+wRCeA==}
+  xgplayer-subtitles@3.0.20:
+    resolution: {integrity: sha512-I1bjsIY+aKOrhYQspLdneOkYg+Vf4cJVGPnDSFnNebnxXl9Mhz5SEpWGzYizMYxL9UvsQ9pgjeEY0o4hkwM+kQ==}
     peerDependencies:
       core-js: '>=3.12.1'
 
-  xgplayer@3.0.19:
-    resolution: {integrity: sha512-yw4yinU5EtxS5YxOpctCVnHS/WW3tLTYjT+ZHivUYihlaAdudrmBmoOCcRYykGg7xz6PVIi6B79Gn1RBnGAnpg==}
+  xgplayer@3.0.20:
+    resolution: {integrity: sha512-UNKZJRyODOZGdka83ao8fI18xdhzOV8qG4aNEOOkuOQbXFXfXsJMr/dazRHFP+uXmTqiCXr568euee3ch7CS7g==}
     peerDependencies:
       core-js: '>=3.12.1'
 
@@ -7153,19 +7156,19 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  xgplayer-subtitles@3.0.19(core-js@3.38.1):
+  xgplayer-subtitles@3.0.20(core-js@3.38.1):
     dependencies:
       core-js: 3.38.1
       eventemitter3: 4.0.7
 
-  xgplayer@3.0.19(core-js@3.38.1):
+  xgplayer@3.0.20(core-js@3.38.1):
     dependencies:
       core-js: 3.38.1
       danmu.js: 1.1.13
       delegate: 3.2.0
       downloadjs: 1.4.7
       eventemitter3: 4.0.7
-      xgplayer-subtitles: 3.0.19(core-js@3.38.1)
+      xgplayer-subtitles: 3.0.20(core-js@3.38.1)
 
   xmlbuilder@15.1.1: {}
 
