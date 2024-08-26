@@ -46,12 +46,18 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+  mainWindow.webContents.userAgent = 'dandanplay-test/android 1.2.3'
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  // const userAgent = 'dandanplay-test/android 1.2.3';
+  // session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
+  //   details.requestHeaders['User-Agent'] = userAgent;
+  //   callback({ cancel: false, requestHeaders: details.requestHeaders });
+  // });
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron')
 

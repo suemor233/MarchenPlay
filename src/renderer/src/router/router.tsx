@@ -1,6 +1,5 @@
 import App from '@renderer/App'
 import NotFound from '@renderer/components/common/NotFound'
-import { RootLoader } from '@renderer/libs/loading'
 import History from '@renderer/page/history'
 import LastAnime from '@renderer/page/latest-anime'
 import VideoPlayer from '@renderer/page/player'
@@ -48,7 +47,6 @@ export const router = [
     path: '/',
     element: <App />,
     errorElement: <NotFound />,
-    loader: RootLoader,
     children: [{
       path: '/',
       element: <Navigate to={RouteName.PLAYER} replace />,

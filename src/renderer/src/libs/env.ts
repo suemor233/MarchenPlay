@@ -1,2 +1,1 @@
-export const mode = process.env.NODE_ENV
-export const isDev = mode === 'development'
+export const API_URL = import.meta.env.VITE_API_URL
