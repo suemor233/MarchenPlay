@@ -19,3 +19,9 @@ export function intToHexColor(color: number): string {
   // 拼接结果
   return `#${rHex}${gHex}${bHex}`
 }
+
+export enum DanmuPosition {
+  scroll = 1,
+  bottom = 4,
+  top = 5,
+}

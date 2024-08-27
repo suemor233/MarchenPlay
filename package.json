@@ -46,7 +46,7 @@
     "ofetch": "^1.3.4",
     "react-router-dom": "6.26.1",
     "tailwind-merge": "^2.5.2",
-    "xgplayer": "^3.0.19"
+    "xgplayer": "^3.0.20"
   },
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",

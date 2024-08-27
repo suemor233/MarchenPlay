@@ -1,37 +1,23 @@
 import { Player } from '@renderer/components/modules/player'
-import { usePlayer } from '@renderer/components/modules/player/hooks'
+import { useVideo } from '@renderer/components/modules/player/hooks'
 import { VideoProvider } from '@renderer/providers/player/PlayerProvider'
+import { useMemo } from 'react'
 
 export default function VideoPlayer() {
-  const { handleDragOver, handleDrop, url } = usePlayer()
-
+  const { handleDragOver, handleDrop, url } = useVideo()
+  const content = useMemo(() => url ? <Player url={url} /> : <DragTips />, [url])
   return (
     <VideoProvider>
       <div onDrop={handleDrop} onDragOver={handleDragOver} className="flex size-full items-center justify-center ">
-        {url ? (
-          <Player url={url} />
-        ) : (
-          <p className="text-gray-500">将视频文件拖放到此处播放</p>
-        )}
+        {content}
       </div>
     </VideoProvider>
   )
 }
 
-// {
-//   "isMatched": true,
-//   "matches": [
-//     {
-//       "episodeId": 180860007,
-//       "animeId": 18086,
-//       "animeTitle": "我推的孩子 第二季",
-//       "episodeTitle": "第18话 太阳",
-//       "type": "tvseries",
-//       "typeDescription": "TV动画",
-//       "shift": 0
-//     }
-//   ],
-//   "errorCode": 0,
-//   "success": true,
-//   "errorMessage": ""
-// }
+const DragTips = () => (
+  <div className="flex flex-col items-center gap-2 text-gray-500">
+    <i className="icon-[mingcute--video-line] text-6xl " />
+    <p className="text-xl">将视频文件拖放到此处播放</p>
+  </div>
+)

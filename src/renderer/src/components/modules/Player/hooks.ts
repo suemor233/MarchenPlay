@@ -1,10 +1,13 @@
 import { matchedVideoAtom, videoAtom } from '@renderer/atoms/player'
 import { calculateFileHash } from '@renderer/libs/calc-file-hash'
 import { tipcClient } from '@renderer/libs/client'
-import { useAtom, useSetAtom } from 'jotai'
+import { apiClient } from '@renderer/request'
+import { useQuery } from '@tanstack/react-query'
+import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import type { DragEvent } from 'react'
+import { Danmu } from 'xgplayer'
 
-export const usePlayer = () => {
+export const useVideo = () => {
   const [video, setVideo] = useAtom(videoAtom)
   const setMatchVideo = useSetAtom(matchedVideoAtom)
   const handleDrop = async (e: DragEvent<HTMLDivElement>) => {
@@ -36,4 +39,47 @@ export const usePlayer = () => {
     handleDragOver,
     url: video.url,
   }
+}
+
+export const usePlayer = (url: string) => {
+  const matchedVideo = useAtomValue(matchedVideoAtom)
+
+  const { data: danmuData } = useQuery({
+    queryKey: [apiClient.comment.Commentkeys, url],
+    queryFn: () => {
+      if (!matchedVideo?.matches) {
+        return null
+      }
+      return apiClient.comment.getDanmu(matchedVideo?.matches[0]?.episodeId.toString())
+    },
+    enabled: !!matchedVideo,
+  })
+
+  return {
+    playerBaseConfig,
+    danmuData,
+  } as const
+}
+
+const playerBaseConfig = {
+  height: '100%',
+  width: '100%',
+  lang: 'zh',
+  autoplay: true,
+  volume: 1,
+  miniprogress: true,
+  screenShot: true,
+  pip: true,
+  rotate: true,
+  download: true,
+  plugins: [Danmu],
+  danmu: {
+
+    fontSize: 25,
+    ext: {
+      mouseControl: true,
+      mouseControlPause: true,
+    },
+
+  },
 }
