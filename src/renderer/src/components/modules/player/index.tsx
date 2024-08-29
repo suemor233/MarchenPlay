@@ -27,7 +27,7 @@ export const Player: FC<PlayerProps> = (props) => {
 
             const mode = DanmuPosition[postition]
             return {
-              duration: 10000, // 弹幕持续显示时间,毫秒(最低为5000毫秒)
+              duration: 15000, // 弹幕持续显示时间,毫秒(最低为5000毫秒)
               id: comment.cid, // 弹幕id，需唯一
               start, // 弹幕出现时间，毫秒
               txt: comment.m, // 弹幕文字内容

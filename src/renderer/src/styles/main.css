@@ -1,3 +1,4 @@
 @import './tailwind.css';
+@import './shadcn.css';
 @import 'xgplayer/dist/index.min.css';
 @import 'xgplayer/es/plugins/danmu/index.css';
