@@ -1,0 +1,10 @@
+
+html {
+  --font-family: "Noto Sans SC", sans-serif,system-ui;
+}
+
+
+body,
+#root {
+  @apply font-theme
+}

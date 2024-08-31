@@ -1,4 +1,6 @@
 @import './tailwind.css';
 @import './shadcn.css';
+@import './font.css';
+@import './base.css';
 @import 'xgplayer/dist/index.min.css';
 @import 'xgplayer/es/plugins/danmu/index.css';

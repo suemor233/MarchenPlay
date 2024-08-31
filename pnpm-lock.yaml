@@ -17,6 +17,9 @@ importers:
       '@electron-toolkit/utils':
         specifier: ^3.0.0
         version: 3.0.0(electron@31.4.0)
+      '@fontsource/noto-sans-sc':
+        specifier: ^5.0.20
+        version: 5.0.20
       '@radix-ui/react-tabs':
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -693,6 +696,9 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
+
+  '@fontsource/noto-sans-sc@5.0.20':
+    resolution: {integrity: sha512-//s6RoHtdtlbD3tXjGzLj4HdI9xoFbGWfE64pqdrxp1IWwOQJz93pnpOc4vxurDV9ET9vy6wajKBDrPDnE5qBg==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -4274,6 +4280,8 @@ snapshots:
       use-isomorphic-layout-effect: 1.1.2(@types/react@18.3.3)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
+
+  '@fontsource/noto-sans-sc@5.0.20': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 

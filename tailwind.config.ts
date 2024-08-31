@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        theme: 'var(--font-family)',
+        default: 'Noto Sans SC, sans-serif, system-ui',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

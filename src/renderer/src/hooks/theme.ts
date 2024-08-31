@@ -1,13 +1,17 @@
+import { tipcClient } from '@renderer/libs/client'
 import { useTheme } from 'next-themes'
 import { useCallback } from 'react'
 
-export type AppTheme = 'cmyk' | 'dark'
-export const useSetTheme = () => {
-  const { setTheme } = useTheme()
+export type AppTheme = 'cmyk' | 'dark' | 'system'
+export const useAppTheme = () => {
+  const { setTheme, theme } = useTheme()
 
   const toggleMode = useCallback((themes: AppTheme) => {
     setTheme(themes)
+    if (window.electron) {
+      tipcClient?.setTheme(themes)
+    }
   }, [setTheme])
 
-  return toggleMode
+  return { toggleMode, theme }
 }
