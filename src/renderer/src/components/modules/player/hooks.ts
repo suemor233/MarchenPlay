@@ -4,16 +4,24 @@ import { tipcClient } from '@renderer/libs/client'
 import { apiClient } from '@renderer/request'
 import { useQuery } from '@tanstack/react-query'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
-import type { DragEvent } from 'react'
+import type { ChangeEvent, DragEvent } from 'react'
+import type { IPlayerOptions } from 'xgplayer'
 import { Danmu } from 'xgplayer'
 
 export const useVideo = () => {
   const [video, setVideo] = useAtom(videoAtom)
   const setMatchVideo = useSetAtom(matchedVideoAtom)
-  const handleDrop = async (e: DragEvent<HTMLDivElement>) => {
+  const handleNewVideo = async (e: DragEvent<HTMLDivElement> | ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     setMatchVideo(null)
-    const file = e?.dataTransfer?.files[0]
+    let file: File | undefined
+    if (e.type === 'drop') {
+      const dragEvent = e as DragEvent<HTMLDivElement>
+      file = dragEvent.dataTransfer?.files[0]
+    } else if (e.type === 'change') {
+      const changeEvent = e as ChangeEvent<HTMLInputElement>
+      file = changeEvent.target?.files?.[0]
+    }
     if (!file || !file?.type.startsWith('video/')) {
       tipcClient?.showErrorDialog({ title: '格式错误', content: '请拖放视频文件' })
       return
@@ -35,9 +43,10 @@ export const useVideo = () => {
   }
 
   return {
-    handleDrop,
+    handleNewVideo,
     handleDragOver,
     url: video.url,
+    showAddVideoTips: !video.url,
   }
 }
 
@@ -74,7 +83,6 @@ const playerBaseConfig = {
   download: true,
   plugins: [Danmu],
   danmu: {
-
     fontSize: 25,
     ext: {
       mouseControl: true,
@@ -82,4 +90,4 @@ const playerBaseConfig = {
     },
 
   },
-}
+} satisfies IPlayerOptions
