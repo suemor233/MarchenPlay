@@ -1,11 +1,12 @@
 # CHANGELOG
 
-## [0.0.1](https://github.com/suemor233/MarchenPlay/compare/0c3019d8ef56374c1a9ebbe76beb0bd40f60135a...v0.0.1) (2024-09-03)
+# [0.1.0](https://github.com/suemor233/MarchenPlay/compare/0c3019d8ef56374c1a9ebbe76beb0bd40f60135a...v0.1.0) (2024-09-03)
 
 
 ### Bug Fixes
 
 *  turn off switching to electron app on every file change ([5faf6fe](https://github.com/suemor233/MarchenPlay/commit/5faf6fec7d726275e6b2c6b1f939b33c4558cf89))
+* ci ([1efb09c](https://github.com/suemor233/MarchenPlay/commit/1efb09ce7b5a82dc8d2cd5710fb4c0b2ea9f5581))
 * ci ([4bdbd88](https://github.com/suemor233/MarchenPlay/commit/4bdbd88fae59c8fa1dcbe45a48e98dfc3ef10465))
 * ci ([01f08c4](https://github.com/suemor233/MarchenPlay/commit/01f08c43c32e56d012a18dc364c948b1994eafd4))
 * ci ([2caa7ff](https://github.com/suemor233/MarchenPlay/commit/2caa7ff9f1b0b6a5db8b4a886a508eb2a17dd550))
