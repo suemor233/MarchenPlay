@@ -19,6 +19,6 @@ $ pnpm dev
 
 ## 截图
 
-![](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-1.png)
+![home](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-1.png)
 
-![](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-2.png)
+![player](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-2.png)
