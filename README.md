@@ -1,34 +1,24 @@
-# marchen-play
+# MarchenPlay
 
-An Electron application with React and TypeScript
+## 简介
 
-## Recommended IDE Setup
+MarchenPlay 是本地视频弹幕播放器，拖入动漫视频即可匹配对应的弹幕
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-## Project Setup
+采用 Electron 开发，支持 **Web, macOS, Windows, Linux** 四个版本，其中主要适配 **macOS** 版本，目前仅支持 **mp4, mkv** 格式。
 
-### Install
+当前项目还在开发初期，功能逐渐完善中
+
+## 开发
 
 ```bash
+$ git clone https://github.com/suemor233/MarchenPlay.git
 $ pnpm install
-```
-
-### Development
-
-```bash
 $ pnpm dev
 ```
 
-### Build
+## 截图
 
-```bash
-# For windows
-$ pnpm build:win
+![](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-1.png)
 
-# For macOS
-$ pnpm build:mac
-
-# For Linux
-$ pnpm build:linux
-```
+![](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-2.png)
