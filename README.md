@@ -13,7 +13,9 @@ MarchenPlay 是本地视频弹幕播放器，拖入动漫视频即可匹配对�
 
 ```bash
 $ git clone https://github.com/suemor233/MarchenPlay.git
+
 $ pnpm install
+
 $ pnpm dev
 ```
 
@@ -21,4 +23,4 @@ $ pnpm dev
 
 ![home](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-1.png)
 
-![player](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-2.png)
+![player](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-player.png)
