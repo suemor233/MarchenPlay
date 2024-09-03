@@ -31,7 +31,6 @@ dmg:
 linux:
   target:
     - AppImage
-    - snap
     - deb
   maintainer: github.com/suemor233
   category: Utility
@@ -41,5 +40,3 @@ npmRebuild: false
 publish:
   provider: generic
   url: https://example.com/auto-updates
-snap:
-  publish: null  
