@@ -3,6 +3,4 @@ dist
 out
 .DS_Store
 *.log*
-.env
 .eslintcache
-.env.*

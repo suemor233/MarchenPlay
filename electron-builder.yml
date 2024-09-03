@@ -1,4 +1,4 @@
-appId: com.electron.app
+appId: com.suemor.marchen-play
 productName: marchen-play
 directories:
   buildResources: build
@@ -33,7 +33,7 @@ linux:
     - AppImage
     - snap
     - deb
-  maintainer: electronjs.org
+  maintainer: github.com/suemor233
   category: Utility
 appImage:
   artifactName: ${name}-${version}.${ext}
