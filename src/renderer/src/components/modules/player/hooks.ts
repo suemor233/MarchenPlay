@@ -1,10 +1,12 @@
 import { matchedVideoAtom, videoAtom } from '@renderer/atoms/player'
 import { calculateFileHash } from '@renderer/libs/calc-file-hash'
 import { tipcClient } from '@renderer/libs/client'
+import { isWeb } from '@renderer/libs/utils'
 import { apiClient } from '@renderer/request'
 import { useQuery } from '@tanstack/react-query'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import type { ChangeEvent, DragEvent } from 'react'
+import { toast } from 'react-toastify'
 import type { IPlayerOptions } from 'xgplayer'
 import { Danmu } from 'xgplayer'
 
@@ -22,9 +24,12 @@ export const useVideo = () => {
       const changeEvent = e as ChangeEvent<HTMLInputElement>
       file = changeEvent.target?.files?.[0]
     }
+
     if (!file || !file?.type.startsWith('video/')) {
-      tipcClient?.showErrorDialog({ title: '格式错误', content: '请拖放视频文件' })
-      return
+      if (isWeb) {
+        return toast.error('请导入视频文件')
+      }
+      return tipcClient?.showErrorDialog({ title: '格式错误', content: '请导入视频文件' })
     }
 
     const url = URL.createObjectURL(file)

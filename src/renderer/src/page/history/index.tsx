@@ -1,3 +1,3 @@
 export default function History() {
-  return <div>history</div>
+  return <div className="flex h-full items-center justify-center">还在编写中，敬请期待</div>
 }
