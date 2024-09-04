@@ -9,3 +9,5 @@ export const videoAtom = atom({
 })
 
 export const matchedVideoAtom = atom<MatchResponseV2 | null>(null)
+
+export const LoadingDanmuProgressAtom = atom(0)

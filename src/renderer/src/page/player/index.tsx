@@ -31,6 +31,7 @@ export default function VideoPlayer() {
         )}
       </div>
     </VideoProvider>
+
   )
 }
 

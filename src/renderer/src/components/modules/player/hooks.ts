@@ -41,9 +41,9 @@ export const useVideo = () => {
     } catch (error) {
       console.error('Failed to calculate file hash:', error)
       if (isWeb) {
-        return toast.error('计算 hash 值出现异常，请重试')
+        return toast.error('计算视频 hash 值出现异常，请重试')
       }
-      return tipcClient?.showErrorDialog({ title: '播放失败', content: '计算 hash 值出现异常，请重试' })
+      return tipcClient?.showErrorDialog({ title: '播放失败', content: '计算视频 hash 值出现异常，请重试' })
     }
   }
 
