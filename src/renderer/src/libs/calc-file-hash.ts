@@ -1,15 +1,13 @@
-import CryptoJS from 'crypto-js'
+import SparkMD5 from 'spark-md5'
 
-export const calculateFileHash = (file: File): Promise<string> => new Promise((resolve, reject) => {
-  const reader = new FileReader()
-  reader.onload = (e) => {
-    const fileContent = e.target?.result as string
-    const hash = CryptoJS.MD5(CryptoJS.enc.Latin1.parse(fileContent)).toString(CryptoJS.enc.Hex)
-    resolve(hash)
-  }
-  reader.onerror = (error) => {
-    reject(error)
-  }
-  const blob = file.slice(0, 16 * 1024 * 1024) // 取前16MB
-  reader.readAsBinaryString(blob)
-})
+export const calculateFileHash = async (file: File): Promise<string> => {
+  // 取前16MB
+  const blob = file.slice(0, 16 * 1024 * 1024)
+  // 使用 Blob#arrayBuffer() 读取文件内容
+  const arrayBuffer = await blob.arrayBuffer()
+  // 使用 SparkMD5 计算 MD5
+  const spark = new SparkMD5.ArrayBuffer()
+  spark.append(arrayBuffer)
+  const hash = spark.end().toLowerCase() // 转换成小写
+  return hash
+}
