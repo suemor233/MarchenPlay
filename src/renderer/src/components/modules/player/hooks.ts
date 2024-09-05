@@ -61,26 +61,6 @@ export const useVideo = () => {
   }
 }
 
-// export const usePlayer = (url: string) => {
-//   const matchedVideo = useAtomValue(matchedVideoAtom)
-
-//   const { data: danmuData } = useQuery({
-//     queryKey: [apiClient.comment.Commentkeys, url],
-//     queryFn: () => {
-//       if (!matchedVideo?.matches) {
-//         return null
-//       }
-//       return apiClient.comment.getDanmu(matchedVideo?.matches[0]?.episodeId.toString())
-//     },
-//     enabled: !!matchedVideo,
-//   })
-
-//   return {
-//     playerBaseConfig,
-//     danmuData,
-//   } as const
-// }
-
 export const playerBaseConfig = {
   height: '100%',
   width: '100%',

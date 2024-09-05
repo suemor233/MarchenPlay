@@ -2,10 +2,11 @@
   "name": "marchen-play",
   "type": "module",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "packageManager": "pnpm@9.7.1",
-  "description": "Bullet screen video player",
+  "description": "Local video danmaku player",
   "author": "Suemor",
+  "license": "MIT",
   "homepage": "https://github.com/suemor233/MarchenPlay",
   "repository": {
     "url": "https://github.com/suemor233/MarchenPlay",
