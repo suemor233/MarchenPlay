@@ -9,7 +9,7 @@ export const ToastContainer = () => {
   const toastConfig = {
     position: 'bottom-right',
     autoClose: 3000,
-    pauseOnHover: true,
+    pauseOnHover: false,
     hideProgressBar: true,
     // theme: resolvedTheme,
     closeOnClick: true,

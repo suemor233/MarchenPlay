@@ -8,7 +8,6 @@ import { useMemo, useRef } from 'react'
 export default function VideoPlayer() {
   const { handleDragOver, handleNewVideo, url, showAddVideoTips } = useVideo()
   const fileInputRef = useRef<HTMLInputElement | null>(null)
-
   const clickImportvideo = () => fileInputRef.current?.click()
   const content = useMemo(() => url ? <Player url={url} /> : <DragTips onClick={clickImportvideo} />, [url])
 

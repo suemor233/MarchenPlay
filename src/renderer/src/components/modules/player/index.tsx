@@ -1,9 +1,12 @@
 import { DanmuPosition, intToHexColor } from '@renderer/libs/danmu'
+import { apiClient } from '@renderer/request'
+import type { CommentsModel } from '@renderer/request/models/comment'
+import { useQuery } from '@tanstack/react-query'
 import type { FC } from 'react'
 import { useEffect, useRef } from 'react'
 import XgPlayer from 'xgplayer'
 
-import { usePlayer } from './hooks'
+import { playerBaseConfig } from './hooks'
 
 interface PlayerProps {
   url: string
@@ -11,14 +14,16 @@ interface PlayerProps {
 
 export const Player: FC<PlayerProps> = (props) => {
   const { url } = props
-  const { danmuData, playerBaseConfig } = usePlayer(url)
   const playerRef = useRef<HTMLDivElement | null>(null)
+  const { data: danmuData } = useQuery<CommentsModel>({ queryKey: [apiClient.comment.Commentkeys, url] })
+
   useEffect(() => {
     if (playerRef.current && danmuData) {
       const player = new XgPlayer({
         ...playerBaseConfig,
         el: playerRef.current,
         url,
+
         danmu: {
           comments: danmuData.comments.map((comment) => {
             const [start, postition, color] = comment.p.split(',').map(Number)
