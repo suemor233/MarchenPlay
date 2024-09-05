@@ -20,6 +20,7 @@ module.exports = {
       fontFamily: {
         theme: 'var(--font-family)',
         default: 'Noto Sans SC, sans-serif, system-ui',
+        logo: 'Manrope',
       },
       colors: {
         border: 'hsl(var(--border))',

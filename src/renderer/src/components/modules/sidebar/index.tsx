@@ -1,8 +1,8 @@
 import { cn } from '@renderer/libs/utils'
 import type { SidebarRouteObject } from '@renderer/router'
-import { siderbarRoutes } from '@renderer/router'
+import { RouteName, siderbarRoutes } from '@renderer/router'
 import type { FC } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 import { DarkModeToggle } from './DarkMode'
 
@@ -12,13 +12,12 @@ export const Sidebar = () => {
   return (
     <div className="relative flex h-full w-[250px] flex-col justify-between bg-base-200 px-3 pt-2.5">
       <div>
-
         <div className={cn(
           'drag-region  flex items-center',
-          'ml-4 justify-between',
+          'ml-2 cursor-pointer justify-between',
         )}
         >
-          <p>{normalStyle && 'MarchenPlay'}</p>
+          <Link to={RouteName.PLAYER} className="font-logo">{normalStyle && 'MarchenPlay'}</Link>
           <button type="button" className="no-drag-region flex size-8 items-center justify-center rounded-md transition-colors hover:bg-base-300">
             <i className="icon-[mingcute--user-add-2-line]" />
           </button>
