@@ -17,13 +17,13 @@ export enum LoadingStatus {
   START_PLAY = 5,
 }
 
-export const LoadingDanmuProgressAtom = atomWithReset<LoadingStatus | null>(null)
+export const loadingDanmuProgressAtom = atomWithReset<LoadingStatus | null>(null)
 
-export const useSetLoadingDanmuProgress = () => useSetAtom(LoadingDanmuProgressAtom)
+export const useSetLoadingDanmuProgress = () => useSetAtom(loadingDanmuProgressAtom)
 
 export const useClearPlayingVideo = () => {
   const resetVideo = useResetAtom(videoAtom)
-  const resetProgress = useResetAtom(LoadingDanmuProgressAtom)
+  const resetProgress = useResetAtom(loadingDanmuProgressAtom)
 
   return () => {
     resetVideo()

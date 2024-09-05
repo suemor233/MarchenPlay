@@ -18,8 +18,9 @@ export const Player: FC<PlayerProps> = (props) => {
   const { data: danmuData } = useQuery<CommentsModel>({ queryKey: [apiClient.comment.Commentkeys, url] })
 
   useEffect(() => {
+    let player: XgPlayer | null = null
     if (playerRef.current && danmuData) {
-      const player = new XgPlayer({
+      player = new XgPlayer({
         ...playerBaseConfig,
         el: playerRef.current,
         url,
@@ -46,6 +47,7 @@ export const Player: FC<PlayerProps> = (props) => {
       })
       player.getCssFullscreen()
     }
+    return () => player?.destroy()
   }, [playerRef, danmuData, url])
 
   return <div ref={playerRef} />

@@ -1,4 +1,4 @@
-import { LoadingDanmuProgressAtom, LoadingStatus, useClearPlayingVideo, videoAtom } from '@renderer/atoms/player'
+import { loadingDanmuProgressAtom, LoadingStatus, useClearPlayingVideo, videoAtom } from '@renderer/atoms/player'
 import { LoadingDanmuTimeLine } from '@renderer/components/modules/player/Timeline'
 import { apiClient } from '@renderer/request'
 import { useQuery } from '@tanstack/react-query'
@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom'
 export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
   const { hash, size, name, url } = useAtomValue(videoAtom)
   const location = useLocation()
-  const [loadingProgress, setLoadingProgress] = useAtom(LoadingDanmuProgressAtom)
+  const [loadingProgress, setLoadingProgress] = useAtom(loadingDanmuProgressAtom)
   const clearPlayingVideo = useClearPlayingVideo()
   const { data: matchData } = useQuery({
     queryKey: [apiClient.match.Matchkeys, url],

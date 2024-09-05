@@ -1,4 +1,4 @@
-import { LoadingDanmuProgressAtom, LoadingStatus, useClearPlayingVideo, videoAtom } from '@renderer/atoms/player'
+import { loadingDanmuProgressAtom, LoadingStatus, useClearPlayingVideo, videoAtom } from '@renderer/atoms/player'
 import { calculateFileHash } from '@renderer/libs/calc-file-hash'
 import { tipcClient } from '@renderer/libs/client'
 import { isWeb } from '@renderer/libs/utils'
@@ -10,7 +10,7 @@ import { Danmu } from 'xgplayer'
 
 export const useVideo = () => {
   const [video, setVideo] = useAtom(videoAtom)
-  const setProgress = useSetAtom(LoadingDanmuProgressAtom)
+  const setProgress = useSetAtom(loadingDanmuProgressAtom)
   const clearPlayingVideo = useClearPlayingVideo()
   const handleNewVideo = async (e: DragEvent<HTMLDivElement> | ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
@@ -96,6 +96,10 @@ export const playerBaseConfig = {
   plugins: [Danmu],
   danmu: {
     fontSize: 25,
+    area: {
+      start: 0,
+      end: 0.25,
+    },
     ext: {
       mouseControl: true,
       mouseControlPause: true,
