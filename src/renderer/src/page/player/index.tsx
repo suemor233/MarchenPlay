@@ -10,7 +10,6 @@ export default function VideoPlayer() {
   const fileInputRef = useRef<HTMLInputElement | null>(null)
   const clickImportvideo = () => fileInputRef.current?.click()
   const content = useMemo(() => url ? <Player url={url} /> : <DragTips onClick={clickImportvideo} />, [url])
-
   return (
     <VideoProvider>
       <div

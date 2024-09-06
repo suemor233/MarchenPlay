@@ -5,7 +5,7 @@ export enum Commentkeys {
   getDanmu = 'getDanmu',
 }
 
-function getDanmu(episodeId: string) {
+function getDanmu(episodeId: number) {
   return Get<CommentsModel>(`/comment/${episodeId}`, {
     withRelated: true,
   })

@@ -1,5 +1,5 @@
 import { tipcClient } from '@renderer/libs/client'
-import { useTheme } from 'next-themes'
+import { useTheme } from 'next-themes-suemor'
 import { useCallback } from 'react'
 
 export type AppTheme = 'cmyk' | 'dark' | 'system'
