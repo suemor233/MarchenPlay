@@ -6,7 +6,7 @@
   "packageManager": "pnpm@9.7.1",
   "description": "Local video danmaku player",
   "author": "Suemor",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "homepage": "https://github.com/suemor233/MarchenPlay",
   "repository": {
     "url": "https://github.com/suemor233/MarchenPlay",
