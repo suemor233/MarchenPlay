@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "private": false,
-  "packageManager": "pnpm@9.7.1",
+  "packageManager": "pnpm@9.9.0",
   "description": "Local video danmaku player",
   "author": "Suemor",
   "license": "GPL-3.0",
