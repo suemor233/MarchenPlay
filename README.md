@@ -24,6 +24,10 @@ $ pnpm dev
 
 ![player](https://fastly.jsdelivr.net/gh/suemor233/static@main/img/marchen-play-player.png)
 
-## License
+## 致谢 & 许可
+
+- [弹弹play](https://www.dandanplay.com)
+- [Follow](https://github.com/RSSNext/follow)
+- [xgplayer](https://github.com/bytedance/xgplayer)
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
