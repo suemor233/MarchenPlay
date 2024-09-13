@@ -1,10 +1,10 @@
 {
   "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit"
-    }
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "tailwindCSS.experimental.classRegex": [
@@ -38,6 +38,5 @@
     { "rule": "unused-imports/no-unused-imports", "severity": "off" }
   ],
   "commentTranslate.hover.enabled": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "eslint.format.enable": true
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

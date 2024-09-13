@@ -1,10 +1,8 @@
-
 html {
-  --font-family: "Noto Sans SC", sans-serif,system-ui;
+  --font-family: 'Noto Sans SC', sans-serif, system-ui;
 }
-
 
 body,
 #root {
-  @apply font-theme
+  @apply font-theme;
 }

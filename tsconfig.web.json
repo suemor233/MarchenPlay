@@ -18,12 +18,8 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@renderer/*": [
-        "src/renderer/src/*"
-      ],
-      "@main/*": [
-        "src/main/*"
-      ]
+      "@renderer/*": ["src/renderer/src/*"],
+      "@main/*": ["src/main/*"]
     }
   }
 }

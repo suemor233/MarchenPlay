@@ -47,10 +47,13 @@ export const router = [
     path: '/',
     element: <App />,
     errorElement: <NotFound />,
-    children: [{
-      path: '/',
-      element: <Navigate to={RouteName.PLAYER} replace />,
-    }, ...siderbarRoutes],
+    children: [
+      {
+        path: '/',
+        element: <Navigate to={RouteName.PLAYER} replace />,
+      },
+      ...siderbarRoutes,
+    ],
   },
 ] satisfies RouteObject[]
 

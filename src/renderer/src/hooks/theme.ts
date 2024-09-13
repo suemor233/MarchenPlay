@@ -6,12 +6,15 @@ export type AppTheme = 'cmyk' | 'dark' | 'system'
 export const useAppTheme = () => {
   const { setTheme, theme } = useTheme()
 
-  const toggleMode = useCallback((themes: AppTheme) => {
-    setTheme(themes)
-    if (window.electron) {
-      tipcClient?.setTheme(themes)
-    }
-  }, [setTheme])
+  const toggleMode = useCallback(
+    (themes: AppTheme) => {
+      setTheme(themes)
+      if (window.electron) {
+        tipcClient?.setTheme(themes)
+      }
+    },
+    [setTheme],
+  )
 
   return { toggleMode, theme }
 }

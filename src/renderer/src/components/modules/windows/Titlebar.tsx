@@ -12,8 +12,7 @@ export const Titlebar = () => {
     <div
       className="drag-region flex w-full items-center justify-end overflow-hidden"
       style={{
-        height:
-          `${ElECTRON_CUSTOM_TITLEBAR_HEIGHT}px`,
+        height: `${ElECTRON_CUSTOM_TITLEBAR_HEIGHT}px`,
         borderTopLeftRadius: `${ELECTRON_WINDOWS_RADIUS}px`,
         borderTopRightRadius: `${ELECTRON_WINDOWS_RADIUS}px`,
       }}
@@ -36,7 +35,11 @@ export const Titlebar = () => {
           refetch()
         }}
       >
-        {isMaximized ? <i className="icon-[mingcute--restore-line]" /> : <i className="icon-[mingcute--square-line]" />}
+        {isMaximized ? (
+          <i className="icon-[mingcute--restore-line]" />
+        ) : (
+          <i className="icon-[mingcute--square-line]" />
+        )}
       </button>
 
       <button

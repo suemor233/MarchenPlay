@@ -15,7 +15,9 @@ interface PlayerProps {
 export const Player: FC<PlayerProps> = (props) => {
   const { url } = props
   const playerRef = useRef<HTMLDivElement | null>(null)
-  const { data: danmuData } = useQuery<CommentsModel>({ queryKey: [apiClient.comment.Commentkeys, url] })
+  const { data: danmuData } = useQuery<CommentsModel>({
+    queryKey: [apiClient.comment.Commentkeys, url],
+  })
 
   useEffect(() => {
     let player: XgPlayer | null = null

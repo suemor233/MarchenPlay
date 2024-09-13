@@ -82,6 +82,7 @@
     "lint-staged": "^15.2.8",
     "nbump": "^2.0.4",
     "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "simple-git-hooks": "^2.11.1",

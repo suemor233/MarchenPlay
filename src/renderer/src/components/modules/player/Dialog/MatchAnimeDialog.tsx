@@ -1,4 +1,9 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@renderer/components/ui/accordion'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@renderer/components/ui/accordion'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@renderer/components/ui/dialog'
 import { ScrollArea } from '@renderer/components/ui/scrollArea'
 import type { MatchResponseV2, MatchResultV2 } from '@renderer/request/models/match'
@@ -31,14 +36,17 @@ export const MatchAnimeDialog: FC<MatchAnimeDialogProps> = (props) => {
   const accordionData = useMemo(() => {
     if (!matchData?.matches) return []
 
-    const groupMatches = matchData.matches.reduce((acc, match) => {
-      if (!acc[match.animeId]) {
-        acc[match.animeId] = []
-      }
+    const groupMatches = matchData.matches.reduce(
+      (acc, match) => {
+        if (!acc[match.animeId]) {
+          acc[match.animeId] = []
+        }
 
-      acc[match.animeId].push(match)
-      return acc
-    }, {} as Record<number, MatchResultV2[]>)
+        acc[match.animeId].push(match)
+        return acc
+      },
+      {} as Record<number, MatchResultV2[]>,
+    )
     return Object.values(groupMatches)
   }, [matchData])
 
@@ -74,14 +82,10 @@ export const MatchAnimeDialog: FC<MatchAnimeDialogProps> = (props) => {
                   </AccordionContent>
                 </AccordionItem>
               )
-            },
-
-            )}
+            })}
           </Accordion>
-
         </ScrollArea>
       </DialogContent>
-
     </Dialog>
   )
 }

@@ -3,12 +3,7 @@ import { defineConfig } from 'eslint-config-hyoban'
 
 export default defineConfig(
   {
-    formatting: {
-      quotes: 'single',
-      arrowParens: true,
-      braceStyle: '1tbs',
-      lineBreak: 'after',
-    },
+    formatting: false,
     lessOpinionated: true,
     preferESM: false,
   },
@@ -25,7 +20,7 @@ export default defineConfig(
         {
           name: 'location',
           message:
-            'Since you don\'t use the same router instance in electron and browser, you can\'t use the global location to get the route info. \n\n' +
+            "Since you don't use the same router instance in electron and browser, you can't use the global location to get the route info. \n\n" +
             'You can use `useLocaltion` or `getReadonlyRoute` to get the route info.',
         },
       ],

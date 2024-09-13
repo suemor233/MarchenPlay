@@ -1,4 +1,9 @@
-import { loadingDanmuProgressAtom, LoadingStatus, useClearPlayingVideo, videoAtom } from '@renderer/atoms/player'
+import {
+  loadingDanmuProgressAtom,
+  LoadingStatus,
+  useClearPlayingVideo,
+  videoAtom,
+} from '@renderer/atoms/player'
 import { calculateFileHash } from '@renderer/libs/calc-file-hash'
 import { tipcClient } from '@renderer/libs/client'
 import { isWeb } from '@renderer/libs/utils'
@@ -45,7 +50,10 @@ export const useVideo = () => {
       if (isWeb) {
         return toast.error('计算视频 hash 值出现异常，请重试')
       }
-      return tipcClient?.showErrorDialog({ title: '播放失败', content: '计算视频 hash 值出现异常，请重试' })
+      return tipcClient?.showErrorDialog({
+        title: '播放失败',
+        content: '计算视频 hash 值出现异常，请重试',
+      })
     }
   }
 
@@ -84,6 +92,5 @@ export const playerBaseConfig = {
       mouseControl: true,
       mouseControlPause: true,
     },
-
   },
 } satisfies IPlayerOptions

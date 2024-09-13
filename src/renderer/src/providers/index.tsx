@@ -12,7 +12,11 @@ const contexts: JSX.Element[] = [
   <QueryClientProvider client={queryClient} key="QueryClientProvider" />,
   <JotaiProvider store={jotaiStore} key="jotaiProvider" />,
   // @ts-ignore
-  <ThemeProvider key="ThemeProvider" attribute={['data-theme', 'class']} themes={['cmyk', 'dark']} />,
+  <ThemeProvider
+    key="ThemeProvider"
+    attribute={['data-theme', 'class']}
+    themes={['cmyk', 'dark']}
+  />,
 ]
 export const RootProviders: FC<PropsWithChildren> = ({ children }) => (
   <ProviderComposer contexts={contexts}>

@@ -57,7 +57,17 @@ export interface MatchResultV2 {
    * 作品类别
    * 可选值: 'tvseries', 'tvspecial', 'ova', 'movie', 'musicvideo', 'web', 'other', 'jpmovie', 'jpdrama', 'unknown'
    */
-  type: 'tvseries' | 'tvspecial' | 'ova' | 'movie' | 'musicvideo' | 'web' | 'other' | 'jpmovie' | 'jpdrama' | 'unknown'
+  type:
+    | 'tvseries'
+    | 'tvspecial'
+    | 'ova'
+    | 'movie'
+    | 'musicvideo'
+    | 'web'
+    | 'other'
+    | 'jpmovie'
+    | 'jpdrama'
+    | 'unknown'
 
   /**
    * 类型描述

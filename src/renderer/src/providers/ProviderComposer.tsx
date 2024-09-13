@@ -9,5 +9,7 @@ export const ProviderComposer: FC<
     contexts: JSX.Element[]
   } & PropsWithChildren
 > = ({ contexts, children }) =>
-  contexts.reduceRight((kids: any, parent: any) =>
-    React.cloneElement(parent, { children: kids }), children)
+  contexts.reduceRight(
+    (kids: any, parent: any) => React.cloneElement(parent, { children: kids }),
+    children,
+  )

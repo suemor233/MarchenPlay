@@ -11,34 +11,32 @@ const packageJson = JSON.parse(fs.readFileSync(join(__dirname, 'package.json'), 
 
 const ROOT = './src/renderer'
 
-const vite = () => defineConfig({
-  build: {
-    outDir: resolve(__dirname, 'out/web'),
-    target: 'ES2022',
-    rollupOptions: {
-      input: {
-        main: resolve(ROOT, '/index.html'),
+const vite = () =>
+  defineConfig({
+    build: {
+      outDir: resolve(__dirname, 'out/web'),
+      target: 'ES2022',
+      rollupOptions: {
+        input: {
+          main: resolve(ROOT, '/index.html'),
+        },
       },
     },
-  },
-  root: ROOT,
-  envDir: resolve(__dirname, '.'),
-  resolve: {
-    alias: {
-      '@renderer': resolve('src/renderer/src'),
+    root: ROOT,
+    envDir: resolve(__dirname, '.'),
+    resolve: {
+      alias: {
+        '@renderer': resolve('src/renderer/src'),
+      },
     },
-  },
-  base: '/',
-  server: {
-    port: 1106,
-    host: true,
-  },
-  plugins: [
-    react(),
-    mkcert(),
-  ],
-  define: {
-    APP_NAME: JSON.stringify(packageJson.name),
-  },
-})
+    base: '/',
+    server: {
+      port: 1106,
+      host: true,
+    },
+    plugins: [react(), mkcert()],
+    define: {
+      APP_NAME: JSON.stringify(packageJson.name),
+    },
+  })
 export default vite

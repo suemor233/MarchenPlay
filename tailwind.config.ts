@@ -71,7 +71,12 @@ module.exports = {
       },
     },
   },
-  plugins: [addDynamicIconSelectors(), daisyui, require('./src/renderer/src/styles/tailwind-extend.css'), require('tailwindcss-animate')],
+  plugins: [
+    addDynamicIconSelectors(),
+    daisyui,
+    require('./src/renderer/src/styles/tailwind-extend.css'),
+    require('tailwindcss-animate'),
+  ],
   daisyui: {
     themes: ['cmyk', 'dark'],
   },

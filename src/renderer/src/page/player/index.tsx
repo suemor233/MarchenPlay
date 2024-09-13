@@ -9,7 +9,10 @@ export default function VideoPlayer() {
   const { handleDragOver, handleNewVideo, url, showAddVideoTips } = useVideo()
   const fileInputRef = useRef<HTMLInputElement | null>(null)
   const clickImportvideo = () => fileInputRef.current?.click()
-  const content = useMemo(() => url ? <Player url={url} /> : <DragTips onClick={clickImportvideo} />, [url])
+  const content = useMemo(
+    () => (url ? <Player url={url} /> : <DragTips onClick={clickImportvideo} />),
+    [url],
+  )
   return (
     <VideoProvider>
       <div
@@ -29,12 +32,14 @@ export default function VideoPlayer() {
         )}
       </div>
     </VideoProvider>
-
   )
 }
 
 const DragTips: FC<{ onClick: () => void }> = ({ onClick }) => (
-  <div className="flex cursor-pointer flex-col items-center gap-2 p-32 text-gray-500" onClick={onClick}>
+  <div
+    className="flex cursor-pointer flex-col items-center gap-2 p-32 text-gray-500"
+    onClick={onClick}
+  >
     <i className="icon-[mingcute--video-line] text-6xl " />
     <p className="select-none text-xl">点击或拖拽动漫到此处播放</p>
   </div>

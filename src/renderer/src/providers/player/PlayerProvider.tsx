@@ -1,4 +1,9 @@
-import { loadingDanmuProgressAtom, LoadingStatus, useClearPlayingVideo, videoAtom } from '@renderer/atoms/player'
+import {
+  loadingDanmuProgressAtom,
+  LoadingStatus,
+  useClearPlayingVideo,
+  videoAtom,
+} from '@renderer/atoms/player'
 import { MatchAnimeDialog } from '@renderer/components/modules/player/Dialog/MatchAnimeDialog'
 import { LoadingDanmuTimeLine } from '@renderer/components/modules/player/Timeline'
 import { apiClient } from '@renderer/request'
@@ -16,7 +21,8 @@ export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
   const clearPlayingVideo = useClearPlayingVideo()
   const { data: matchData } = useQuery({
     queryKey: [apiClient.match.Matchkeys, url],
-    queryFn: () => apiClient.match.postVideoEpisodeId({ fileSize: size, fileHash: hash, fileName: name }),
+    queryFn: () =>
+      apiClient.match.postVideoEpisodeId({ fileSize: size, fileHash: hash, fileName: name }),
     enabled: !!hash,
   })
   const { data: danmuData } = useQuery({
@@ -56,10 +62,13 @@ export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
     setCurrentEpisodeId(null)
   }, [hash])
 
-  useEffect(() => () => {
-    clearPlayingVideo()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname])
+  useEffect(
+    () => () => {
+      clearPlayingVideo()
+       
+    },
+    [location.pathname],
+  )
 
   if (loadingProgress !== null && loadingProgress < LoadingStatus.START_PLAY) {
     return (
