@@ -31,6 +31,7 @@ const vite = () => defineConfig({
   base: '/',
   server: {
     port: 1106,
+    host: true,
   },
   plugins: [
     react(),
