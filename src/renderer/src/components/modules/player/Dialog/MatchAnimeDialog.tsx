@@ -6,6 +6,7 @@ import {
 } from '@renderer/components/ui/accordion'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@renderer/components/ui/dialog'
 import { ScrollArea } from '@renderer/components/ui/scrollArea'
+import { useToast } from '@renderer/components/ui/toast'
 import type { MatchResponseV2, MatchResultV2 } from '@renderer/request/models/match'
 import { useAtom } from 'jotai'
 import type { FC } from 'react'
@@ -22,7 +23,7 @@ interface MatchAnimeDialogProps {
 export const MatchAnimeDialog: FC<MatchAnimeDialogProps> = (props) => {
   const { matchData, onSelected, onClosed } = props
   const [showMatchAnimeDialog, setShowMatchAnimeDialog] = useAtom(showMatchAnimeDialogAtom)
-
+  const { toast } = useToast()
   useEffect(() => {
     if (matchData && !matchData.isMatched) {
       setShowMatchAnimeDialog(true)
@@ -78,6 +79,10 @@ export const MatchAnimeDialog: FC<MatchAnimeDialogProps> = (props) => {
                           onClick={() => {
                             onSelected && onSelected(item.episodeId)
                             setShowMatchAnimeDialog(false)
+                            toast({
+                              title: '已选择弹幕库',
+                              description: `已选择 ${animeTitle} ${item.episodeTitle}`,
+                            })
                           }}
                           className="cursor-pointer hover:text-info"
                         >

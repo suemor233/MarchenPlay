@@ -1,5 +1,6 @@
 import { jotaiStore } from '@renderer/atoms/store'
 import { SettingDialog } from '@renderer/components/modules/setting'
+import { Toaster } from '@renderer/components/ui/toast'
 import queryClient from '@renderer/libs/query-client'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { Provider as JotaiProvider } from 'jotai'
@@ -25,5 +26,6 @@ export const RootProviders: FC<PropsWithChildren> = ({ children }) => (
 
     <ToastContainer />
     <SettingDialog />
+    <Toaster />
   </ProviderComposer>
 )
