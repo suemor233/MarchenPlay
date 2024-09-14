@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import mkcert from 'vite-plugin-mkcert'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const packageJson = JSON.parse(fs.readFileSync(join(__dirname, 'package.json'), 'utf-8'))
@@ -34,7 +33,7 @@ const vite = () =>
       port: 1106,
       host: true,
     },
-    plugins: [react(), mkcert()],
+    plugins: [react()],
     define: {
       APP_NAME: JSON.stringify(packageJson.name),
     },

@@ -88,8 +88,7 @@
     "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.9",
     "typescript": "^5.5.2",
-    "vite": "^5.3.1",
-    "vite-plugin-mkcert": "^1.17.5"
+    "vite": "^5.3.1"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

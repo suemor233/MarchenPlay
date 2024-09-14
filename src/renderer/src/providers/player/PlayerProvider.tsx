@@ -65,7 +65,6 @@ export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
   useEffect(
     () => () => {
       clearPlayingVideo()
-       
     },
     [location.pathname],
   )
