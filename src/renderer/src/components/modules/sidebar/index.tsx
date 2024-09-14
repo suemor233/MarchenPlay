@@ -4,8 +4,8 @@ import type { SidebarRouteObject } from '@renderer/router'
 import { RouteName, siderbarRoutes } from '@renderer/router'
 import type { FC } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
+import { showSettingDialog } from '../setting/hooks'
 import { DarkModeToggle } from './DarkMode'
 
 export const Sidebar = () => {
@@ -19,12 +19,10 @@ export const Sidebar = () => {
           </Link>
           <button
             type="button"
-            onClick={() => {
-              toast.warning('还在编写中，敬请期待')
-            }}
+            onClick={showSettingDialog}
             className="no-drag-region flex size-8 items-center justify-center rounded-md transition-colors hover:bg-base-300"
           >
-            <i className="icon-[mingcute--user-add-2-line]" />
+            <i className="icon-[mingcute--settings-3-line] text-lg" />
           </button>
         </div>
         <nav className="mt-5 flex flex-col gap-2">

@@ -42,7 +42,6 @@ export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     if (matchData) {
       setLoadingProgress(LoadingStatus.MARCH_ANIME)
-
       if (matchData.isMatched && matchData.matches) {
         setCurrentEpisodeId(matchData?.matches[0]?.episodeId)
       }
@@ -60,7 +59,7 @@ export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     setCurrentEpisodeId(null)
-  }, [hash])
+  }, [url])
 
   useEffect(
     () => () => {
@@ -68,7 +67,6 @@ export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
     },
     [location.pathname],
   )
-
   if (loadingProgress !== null && loadingProgress < LoadingStatus.START_PLAY) {
     return (
       <>

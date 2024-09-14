@@ -52,7 +52,13 @@ export const MatchAnimeDialog: FC<MatchAnimeDialogProps> = (props) => {
 
   return (
     <Dialog open={showMatchAnimeDialog} onOpenChange={(open) => setShowMatchAnimeDialog(open)}>
-      <DialogContent className="sm:max-w-[725px]" onClosed={onClosed}>
+      <DialogContent
+        className="sm:max-w-[725px]"
+        onClosed={onClosed}
+        onInteractOutside={(e) => {
+          e.preventDefault()
+        }}
+      >
         <DialogHeader>
           <DialogTitle className="text-xl">请手动选择弹幕库</DialogTitle>
         </DialogHeader>
