@@ -1,5 +1,9 @@
 'use client'
 
+import { loadingDanmuProgressAtom, LoadingStatus } from '@renderer/atoms/player'
+import { cn } from '@renderer/libs/utils'
+import { useAtomValue } from 'jotai'
+
 import {
   Toast,
   ToastClose,
@@ -12,7 +16,8 @@ import { useToast } from './use-toast'
 
 export function Toaster() {
   const { toasts } = useToast()
-
+  const loadingProgress = useAtomValue(loadingDanmuProgressAtom)
+  const videoPlaying = loadingProgress === LoadingStatus.START_PLAY
   return (
     <ToastProvider>
       {toasts.map(({ id, title, description, action, ...props }) => (
@@ -25,7 +30,8 @@ export function Toaster() {
           <ToastClose />
         </Toast>
       ))}
-      <ToastViewport />
+      {/* 防止弹窗遮住视频进度条 */}
+      <ToastViewport className={cn(videoPlaying && 'sm:bottom-10')} />
     </ToastProvider>
   )
 }

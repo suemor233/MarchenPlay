@@ -16,7 +16,7 @@ import { showMatchAnimeDialogAtom } from './hooks'
 
 interface MatchAnimeDialogProps {
   matchData?: MatchResponseV2
-  onSelected?: (episodeId: number) => void
+  onSelected?: (episodeId: number, title: string) => void
   onClosed?: () => void
 }
 
@@ -77,7 +77,8 @@ export const MatchAnimeDialog: FC<MatchAnimeDialogProps> = (props) => {
                         <li
                           key={item.episodeId}
                           onClick={() => {
-                            onSelected && onSelected(item.episodeId)
+                            onSelected &&
+                              onSelected(item.episodeId, `${animeTitle} - ${item.episodeTitle}`)
                             setShowMatchAnimeDialog(false)
                             toast({
                               title: '已选择弹幕库',
