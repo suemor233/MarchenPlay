@@ -4,18 +4,19 @@ import {
   useClearPlayingVideo,
   videoAtom,
 } from '@renderer/atoms/player'
+import { useToast } from '@renderer/components/ui/toast'
 import { calculateFileHash } from '@renderer/libs/calc-file-hash'
 import { tipcClient } from '@renderer/libs/client'
 import { isWeb } from '@renderer/libs/utils'
 import { useAtom, useSetAtom } from 'jotai'
 import type { ChangeEvent, DragEvent } from 'react'
-import { toast } from 'react-toastify'
 import type { IPlayerOptions } from 'xgplayer'
 import { Danmu } from 'xgplayer'
 
 export const useVideo = () => {
   const [video, setVideo] = useAtom(videoAtom)
   const setProgress = useSetAtom(loadingDanmuProgressAtom)
+  const { toast } = useToast()
   const clearPlayingVideo = useClearPlayingVideo()
   const handleNewVideo = async (e: DragEvent<HTMLDivElement> | ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
@@ -32,7 +33,11 @@ export const useVideo = () => {
     if (!file || !file?.type.startsWith('video/')) {
       clearPlayingVideo()
       if (isWeb) {
-        return toast.error('请导入视频文件')
+        return toast({
+          title: '格式错误',
+          description: '请导入视频文件',
+          variant: 'destructive',
+        })
       }
       return tipcClient?.showErrorDialog({ title: '格式错误', content: '请导入视频文件' })
     }
@@ -48,7 +53,11 @@ export const useVideo = () => {
       console.error('Failed to calculate file hash:', error)
       clearPlayingVideo()
       if (isWeb) {
-        return toast.error('计算视频 hash 值出现异常，请重试')
+        toast({
+          title: '播放失败',
+          description: '计算视频 hash 值出现异常，请重试',
+          variant: 'destructive',
+        })
       }
       return tipcClient?.showErrorDialog({
         title: '播放失败',

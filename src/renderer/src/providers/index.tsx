@@ -8,7 +8,6 @@ import { ThemeProvider } from 'next-themes-suemor'
 import type { FC, PropsWithChildren } from 'react'
 
 import { ProviderComposer } from './ProviderComposer'
-import { ToastContainer } from './ToastContainer'
 
 const contexts: JSX.Element[] = [
   <QueryClientProvider client={queryClient} key="QueryClientProvider" />,
@@ -24,7 +23,6 @@ export const RootProviders: FC<PropsWithChildren> = ({ children }) => (
   <ProviderComposer contexts={contexts}>
     {children}
 
-    <ToastContainer />
     <SettingDialog />
     <Toaster />
   </ProviderComposer>
