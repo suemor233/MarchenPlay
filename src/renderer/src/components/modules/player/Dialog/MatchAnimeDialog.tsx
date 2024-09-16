@@ -85,7 +85,7 @@ export const MatchAnimeDialog: FC<MatchAnimeDialogProps> = (props) => {
                               description: `已选择 ${animeTitle} ${item.episodeTitle}`,
                             })
                           }}
-                          className="cursor-pointer hover:text-info"
+                          className="hover:text-info"
                         >
                           {item.episodeTitle}
                         </li>

@@ -13,12 +13,14 @@ export const SettingDialog = () => {
   const [open, setOpen] = useAtom(settingDialogAtom)
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent>
+      <DialogContent
+        onInteractOutside={(e) => {
+          e.preventDefault()
+        }}
+      >
         <DialogHeader>
           <DialogTitle>正在编写中</DialogTitle>
-          <DialogDescription>
-            正在编写中
-          </DialogDescription>
+          <DialogDescription>正在编写中</DialogDescription>
         </DialogHeader>
       </DialogContent>
     </Dialog>

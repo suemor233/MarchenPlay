@@ -59,10 +59,13 @@ export const VideoProvider: FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     if (danmuData) {
       setLoadingProgress(LoadingStatus.READY_PLAY)
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         setLoadingProgress(LoadingStatus.START_PLAY)
       }, 100)
+      return () => clearTimeout(timeoutId)
     }
+
+    return () => {}
   }, [danmuData, setLoadingProgress])
 
   useEffect(() => {
