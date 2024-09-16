@@ -1,0 +1,58 @@
+name: CI Build, Lint, Typecheck, and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Lint, Typecheck, Build, and Deploy
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint and Typecheck
+        run: |
+          pnpm run typecheck
+          pnpm run lint
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Archive production artifacts
+        run: tar -cvf build.tar -C out/web .
+
+      - name: Deploy to remote server
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
+          chmod 600 deploy_key
+          scp -i deploy_key -o StrictHostKeyChecking=no build.tar $DEPLOY_USER@$DEPLOY_HOST:/opt/1panel/apps/openresty/openresty/www/sites/
+          ssh -i deploy_key -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "cd /opt/1panel/apps/openresty/openresty/www/sites/ && tar -xvf build.tar && mv index.html assets marchen-play.suemor.com && rm build.tar"
