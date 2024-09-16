@@ -49,7 +49,7 @@ const NavLinkItem: FC<SidebarRouteObject> = ({ path, meta }) => {
       to={path}
       className={cn(pathname === path && 'rounded-md bg-base-300')}
     >
-      <p className="flex cursor-default items-center gap-2 p-2">
+      <p className="flex cursor-default items-center gap-1.5 p-2">
         <i className={cn(icon, 'text-xl')} />
         <span>{title}</span>
       </p>
