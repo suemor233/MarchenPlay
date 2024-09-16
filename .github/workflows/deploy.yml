@@ -41,10 +41,10 @@ jobs:
           pnpm run lint
 
       - name: Build project
-        run: pnpm run build
+        run: pnpm run build:web
 
       - name: Archive production artifacts
-        run: tar -cvf build.tar -C out/web .
+        run: tar -cvf build.tar -C ./out/web .
 
       - name: Deploy to remote server
         env:
@@ -54,5 +54,5 @@ jobs:
         run: |
           echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
           chmod 600 deploy_key
-          scp -i deploy_key -o StrictHostKeyChecking=no build.tar $DEPLOY_USER@$DEPLOY_HOST:/opt/1panel/apps/openresty/openresty/www/sites/
-          ssh -i deploy_key -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "cd /opt/1panel/apps/openresty/openresty/www/sites/ && tar -xvf build.tar && mv index.html assets marchen-play.suemor.com && rm build.tar"
+          scp -i deploy_key -o StrictHostKeyChecking=no build.tar $DEPLOY_USER@$DEPLOY_HOST:/opt/1panel/apps/openresty/openresty/www/sites/marchen-play.suemor.com/index/
+          ssh -i deploy_key -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "cd /opt/1panel/apps/openresty/openresty/www/sites/marchen-play.suemor.com/index/ && tar -xvf build.tar && rm build.tar"
