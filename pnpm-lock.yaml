@@ -19,10 +19,10 @@ importers:
         version: 3.0.0(electron@32.1.0)
       '@fontsource/manrope':
         specifier: ^5.0.21
-        version: 5.0.21
+        version: 5.1.0
       '@fontsource/noto-sans-sc':
         specifier: ^5.0.20
-        version: 5.0.20
+        version: 5.1.0
       '@radix-ui/react-accordion':
         specifier: ^1.2.0
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -779,11 +779,11 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@fontsource/manrope@5.0.21':
-    resolution: {integrity: sha512-epFrEcKE9Jm2yyqYspmpPV/cBDQrygQ5yNGt5Gv0P8TU5ks9ygYsbpx1U/WvQPOVFp5h+qFZjD9S6dZUzmRRRg==}
+  '@fontsource/manrope@5.1.0':
+    resolution: {integrity: sha512-q3Va+3ymeE1n9mHSkp9fCqcFGX0q59Nn94WOjuPYaSYa1szt8qlaGbBQH0w9e1+PcPD8jf4JUIz3/KjWM6wcCw==}
 
-  '@fontsource/noto-sans-sc@5.0.20':
-    resolution: {integrity: sha512-//s6RoHtdtlbD3tXjGzLj4HdI9xoFbGWfE64pqdrxp1IWwOQJz93pnpOc4vxurDV9ET9vy6wajKBDrPDnE5qBg==}
+  '@fontsource/noto-sans-sc@5.1.0':
+    resolution: {integrity: sha512-6Za/beXpkP0nStbyPRJPGRGwvjHwrlP0gbR/73bJKXWyjzsRQA+LF9990R5oPmgm+NmBDb0grad6Q9E7OEzLtw==}
 
   '@gar/promisify@1.1.3':
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
@@ -4998,9 +4998,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@fontsource/manrope@5.0.21': {}
+  '@fontsource/manrope@5.1.0': {}
 
-  '@fontsource/noto-sans-sc@5.0.20': {}
+  '@fontsource/noto-sans-sc@5.1.0': {}
 
   '@gar/promisify@1.1.3': {}
 
